@@ -15,7 +15,7 @@
     </div>
     <div class="rz-view-content">
         <Hours Start=@StartTime End=@EndTime TimeFormat=@TimeFormat MinutesPerSlot=@MinutesPerSlot />
-        <div @ref=view class="rz-week-view-content" tabindex="0" @onkeydown="@(args => OnKeyPress(args))" @onkeydown:preventDefault="@preventKeyPress" @onkeydown:stopPropagation
+        <div @ref=view class="rz-week-view-content" tabindex="0" @onkeydown="@(args => OnKeyPress(args))" @onkeydown:preventDefault="@preventKeyPress" 
              @onfocus=@(args => {if(CurrentDate == default(DateTime)) { CurrentDate = StartDate; }})>
         @for (var day = StartDate; day < EndDate; day = day.AddDays(1))
         {

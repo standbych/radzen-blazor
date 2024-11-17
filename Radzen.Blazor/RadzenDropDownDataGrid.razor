@@ -19,13 +19,13 @@
 
         @if (ValueTemplate != null && selectedItem != null)
         {
-            <span class="rz-dropdown-label rz-inputtext" style="width:100%;" @onkeydown:stopPropagation>
+            <span class="rz-dropdown-label rz-inputtext" style="width:100%;" >
                 @ValueTemplate(selectedItem)
             </span>
         }
         else if (Template != null && selectedItem != null)
         {
-            <span class="rz-dropdown-label rz-inputtext" style="width:100%;" @onkeydown:stopPropagation>
+            <span class="rz-dropdown-label rz-inputtext" style="width:100%;" >
                 @Template(selectedItem)
             </span>
         }
@@ -44,7 +44,7 @@
                     @foreach (var item in itemsToUse)
                     {
                         <div class="rz-chip">
-                            <span class="rz-chip-text" @onkeydown:stopPropagation>
+                            <span class="rz-chip-text" >
                                 @if (ValueTemplate != null)
                                 {
                                     @ValueTemplate(item)
@@ -65,7 +65,7 @@
             }
             else
             {
-                <label class="rz-dropdown-label rz-inputtext" style="width:100%;" @onkeydown:stopPropagation>
+                <label class="rz-dropdown-label rz-inputtext" style="width:100%;" >
                     @if (itemsToUse.Count < MaxSelectedLabels)
                     {
                         @if (Template == null)

@@ -14,7 +14,7 @@
     const double NUMBER_DAYS_COLUMNS = 38.0;
 }
 
-<div @ref=view class="rz-view rz-planner-view" tabindex="0" @onkeydown="@(args => OnKeyPress(args))" @onkeydown:preventDefault="@preventKeyPress" @onkeydown:stopPropagation
+<div @ref=view class="rz-view rz-planner-view" tabindex="0" @onkeydown="@(args => OnKeyPress(args))" @onkeydown:preventDefault="@preventKeyPress" 
                  @onfocus=@(args => {CurrentDate = CurrentDate != default(DateTime) ? CurrentDate : StartDate; CurrentMonth = CurrentMonth != -1 ? CurrentMonth : 0; })>
     <div class="rz-view-header">
         <div class="rz-slot-header">

@@ -23,7 +23,7 @@
             <div class="rz-group-header" @onmouseup=@(args => EndColumnDropToGroup())>
                 @if (@HeaderTemplate != null)
                 {
-                    <div class="rz-custom-header" @onkeydown:stopPropagation>
+                    <div class="rz-custom-header" >
                         @HeaderTemplate
                     </div>
                 }
@@ -70,7 +70,7 @@
             @if (@HeaderTemplate != null)
             {
                 <div class="rz-group-header">
-                    <div class="rz-custom-header" @onkeydown:stopPropagation>
+                    <div class="rz-custom-header" >
                         @HeaderTemplate
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                     }
                     @if (AllowFiltering && (visibleColumns.Any(c => c.FilterMode == FilterMode.Simple || c.FilterMode == FilterMode.SimpleWithMenu) || FilterMode == FilterMode.Simple || FilterMode == FilterMode.SimpleWithMenu) && columns.Where(column => column.Filterable && (!string.IsNullOrEmpty(column.GetFilterProperty()) || column.FilterTemplate != null)).Any())
                     {
-                        <tr @onkeydown:stopPropagation>
+                        <tr >
                              @if (ShowGroupExpandColumn)
                                 {
                                     @foreach (var g in Groups)
@@ -346,7 +346,7 @@
                             }
                             else
                             {
-                                <tr class=" rz-datatable-emptymessage-row" @onkeydown:stopPropagation>
+                                <tr class=" rz-datatable-emptymessage-row" >
                                     <td class="rz-datatable-emptymessage" colspan="@(visibleColumns.Sum(c => c.GetColSpan()) + (Template != null && ShowExpandColumn ? 1 : 0))">
                                         @if (EmptyTemplate != null)
                                         {
@@ -362,7 +362,7 @@
                         }
                         else
                         {
-                            <tr class=" rz-datatable-emptymessage-row" @onkeydown:stopPropagation>
+                            <tr class=" rz-datatable-emptymessage-row" >
                                 <td class="rz-datatable-emptymessage" colspan="@(visibleColumns.Sum(c => c.GetColSpan()) + (Template != null && ShowExpandColumn ? 1 : 0) + Groups.Count)">
                                     @if (EmptyTemplate != null)
                                     {
@@ -379,7 +379,7 @@
                 </tbody>
                 @if (allColumns.Where(c => c.Visible && c.FooterTemplate != null).Any())
                 {
-                    <tfoot class="rz-datatable-tfoot" @onkeydown:stopPropagation>
+                    <tfoot class="rz-datatable-tfoot" >
                         @for (var i = 0; i < deepestChildColumnLevel + 1; i++)
                         {
                             <tr>
@@ -427,7 +427,7 @@
             @if (IsLoading)
             {
                 <div class="rz-datatable-loading"></div>
-                <div class="rz-datatable-loading-content" @onkeydown:stopPropagation>
+                <div class="rz-datatable-loading-content" >
                     @if(LoadingTemplate != null)
                     {
                     @LoadingTemplate
@@ -446,7 +446,7 @@
         }
         @if (@FooterTemplate != null)
         {
-            <div class="rz-custom-footer" @onkeydown:stopPropagation>
+            <div class="rz-custom-footer" >
                 @FooterTemplate
             </div>
         }

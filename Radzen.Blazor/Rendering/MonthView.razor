@@ -18,7 +18,7 @@
         var days = 0;
         var points = new Dictionary<AppointmentData, double>();
     }
-    <div @ref=contentView class="rz-view-content" tabindex="0" @onkeydown="@(args => OnKeyPress(args))" @onkeydown:preventDefault="@preventKeyPress" @onkeydown:stopPropagation
+    <div @ref=contentView class="rz-view-content" tabindex="0" @onkeydown="@(args => OnKeyPress(args))" @onkeydown:preventDefault="@preventKeyPress" 
          @onfocus=@(args => {if(CurrentDate == default(DateTime)) { CurrentDate = StartDate; }})>
     @for (var date = StartDate; date < EndDate; date = date.AddDays(7))
     {

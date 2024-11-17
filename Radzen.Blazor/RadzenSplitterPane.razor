@@ -31,7 +31,7 @@
             @if (IsResizable)
             {
                 <span tabindex="0" class="rz-resize" id="@(GetId() + "-resize")"
-                    @onkeydown="@(args => OnKeyPress(args))" @onkeydown:preventDefault=preventKeyPress @onkeydown:stopPropagation>
+                    @onkeydown="@(args => OnKeyPress(args))" @onkeydown:preventDefault=preventKeyPress >
                 </span>
             }
 

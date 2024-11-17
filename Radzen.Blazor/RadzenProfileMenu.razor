@@ -3,11 +3,11 @@
 @if (Visible)
 {
     <ul @ref="@Element" style="@Style" @attributes="Attributes" class="@GetCssClass()" id="@GetId()" 
-        tabindex="0" @onkeydown="@OnKeyPress" @onkeydown:preventDefault=preventKeyPress @onkeydown:stopPropagation>
+        tabindex="0" @onkeydown="@OnKeyPress" @onkeydown:preventDefault=preventKeyPress >
         <li class="rz-navigation-item">
             <div class="rz-navigation-item-wrapper" onclick="Radzen.toggleMenuItem(this)">
                 <div class="rz-navigation-item-link">
-                    <div class="item-text" @onkeydown:stopPropagation>
+                    <div class="item-text" >
                         @if (Template != null)
                         {
                             @Template
@@ -19,7 +19,7 @@
                     }
                 </div>
             </div>
-            <ul class="rz-navigation-menu" style="@contentStyle" @onkeydown:stopPropagation>
+            <ul class="rz-navigation-menu" style="@contentStyle" >
                 <CascadingValue Value=this>
                     @ChildContent
                 </CascadingValue>
